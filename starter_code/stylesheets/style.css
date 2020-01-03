@@ -126,7 +126,7 @@ nav {
   align-items: center;
   z-index: 5;
 }
-nav img  { max-width: 10%; }
+nav img  { max-width: 136px; }
 nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -225,6 +225,22 @@ nav .navbar-toggler-icon {
 .d-flex {
   display: flex;
 }
+.order-1 {
+  -ms-flex-order: 1;
+  order: 1;
+}
+.order-2 {
+  -ms-flex-order: 2;
+  order: 2;
+}
+.order-3 {
+  -ms-flex-order: 3;
+  order: 3;
+}
+.order-4 {
+  -ms-flex-order: 4;
+  order: 4;
+}
 
 /*companiesSection*/
 .companiesSection {
@@ -261,7 +277,7 @@ nav .navbar-toggler-icon {
 
 /* footer */
 footer {
-  padding: 40px 20px 0 20px;
+  padding: 40px 0 0 0;
   border-top: 1px solid #d6d7dd;
 }
 
@@ -289,10 +305,18 @@ footer ul li.title {
 /* queries -----------------------------------------*/
 /* width < 768px */
 @media (max-width: 768px) {
+  main {
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+
   /*visibility*/
   .d-block { display: block; }
 
   /*grid*/
+  .container {
+    max-width: 636px;
+  }
   .col-6 , .col-4, .logo_wrap {
     -ms-flex: 0 0 100%;
     -webkit-box-flex: 0;
@@ -305,13 +329,29 @@ footer ul li.title {
     flex: 0 0 50%;
     max-width: 50%;
   }
+  .order-md-1 {
+    -ms-flex-order: 1;
+    order: 1;
+  }
+  .order-md-2 {
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  .order-md-3 {
+    -ms-flex-order: 3;
+    order: 3;
+  }
+  .order-md-4 {
+    -ms-flex-order: 4;
+    order: 4;
+  }
 
   /*fonts*/
   .tit1 { font-size: 3rem; }
   p {  font-size: 1.2rem; }
 
   /*button*/
-  .btn { width: 100%; }
+  /* .btn { width: 100%; }  */
 
   /* nav */
   nav { 
@@ -377,3 +417,28 @@ footer ul li.title {
   }
 }
 /* width < 768px */
+
+/*small*/
+@media (max-width: 576px) {
+  .container {
+    max-width: 425px;
+  }
+  .col-6 , .col-4, .logo_wrap {
+    -ms-flex: 0 0 100%;
+    -webkit-box-flex: 0;
+    flex: 0 0 100%  !important;
+    max-width: 100%  !important;
+  }
+
+  /*font*/
+  .tit1, .tit2, .tit3, .tit4 { font-size: 1.5rem;  }
+  p {
+    font-size: 1.0rem;
+  }
+}/*small*/
+
+@media (min-width: 992px){
+  .container, {
+    max-width: 960px;
+  }
+}
